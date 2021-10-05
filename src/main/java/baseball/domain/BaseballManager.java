@@ -23,5 +23,7 @@ public class BaseballManager {
 
     private void playBaseball() {
         String input = Input.inputNumber();
+        Result result = computer.calculateResult(input);
+
     }
 }
