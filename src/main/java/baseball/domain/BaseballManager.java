@@ -19,7 +19,6 @@ public class BaseballManager {
 
     public void run() {
         player.play();
-        computer.generateAnswer();
 
         while (player.isPlay()) {
             playBaseball();
