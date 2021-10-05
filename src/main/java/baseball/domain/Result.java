@@ -1,5 +1,7 @@
 package baseball.domain;
 
+import baseball.ui.Output;
+
 public class Result {
 
     private static final int ZERO = 0;
@@ -39,5 +41,20 @@ public class Result {
 
     public int getBall() {
         return ball;
+    }
+
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        if (strike == ZERO && ball == ZERO) {
+            return Output.NOTHING;
+        }
+        if (strike != ZERO) {
+            sb.append(strike).append(Output.STRIKE);
+        }
+        if (ball != ZERO) {
+            sb.append(ball).append(Output.BALL);
+        }
+        return sb.toString();
     }
 }
