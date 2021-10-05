@@ -12,6 +12,10 @@ public class Player {
         this.status = Status.PLAY;
     }
 
+    public void victory() {
+        this.status = Status.VICTORY;
+    }
+
     public boolean isReady() {
         return this.status == Status.READY;
     }

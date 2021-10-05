@@ -1,6 +1,7 @@
 package baseball.domain;
 
 import baseball.ui.Input;
+import baseball.ui.Output;
 
 public class BaseballManager {
 
@@ -24,6 +25,14 @@ public class BaseballManager {
     private void playBaseball() {
         String input = Input.inputNumber();
         Result result = computer.calculateResult(input);
+        Output.printResult(result);
+        checkVictory(result);
+    }
 
+    private void checkVictory(Result result) {
+        if (result.isStrikeOut()) {
+            player.victory();
+            Output.printVictoryMessage();
+        }
     }
 }

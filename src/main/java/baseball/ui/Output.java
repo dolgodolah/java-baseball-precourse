@@ -1,5 +1,7 @@
 package baseball.ui;
 
+import baseball.domain.Result;
+
 public class Output {
 
     private static String INPUT_NUMBER_MESSAGE = "숫자를 입력해주세요 : ";
@@ -20,5 +22,9 @@ public class Output {
 
     public static void printRestartStatusMessage() {
         System.out.println(RESTART_MESSAGE);
+    }
+
+    public static void printResult(Result result) {
+        System.out.println(result.toString());
     }
 }
