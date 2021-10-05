@@ -5,6 +5,9 @@ import baseball.ui.Output;
 
 public class BaseballManager {
 
+    private static final String RESTART = "1";
+    private static final String EXIT = "2";
+
     private Player player;
     private Computer computer;
 
@@ -33,6 +36,24 @@ public class BaseballManager {
         if (result.isStrikeOut()) {
             player.victory();
             Output.printVictoryMessage();
+            askRestartStatus();
+        }
+    }
+
+    private void askRestartStatus() {
+        while (player.isVictory()) {
+            String input = Input.inputRestartStatus();
+            checkRestartStatus(input);
+        }
+    }
+
+    private void checkRestartStatus(String input) {
+        if (input.equals(RESTART)) {
+            player.ready();
+        }
+
+        if (input.equals(EXIT)) {
+            player.exit();
         }
     }
 }
